@@ -1,6 +1,6 @@
 package ru.lisa;
 
-public class CustomHashMap<K, V> implements CustomMap<K, V> {   //реал методлов интерфейса
+public class CustomHashMap<K, V> implements CustomMap<K, V> {
 
     private static final int DEFAULT_CAPACITY = 16;
     private static final float DEFAULT_LOAD_FACTOR = 0.75f;
@@ -10,7 +10,7 @@ public class CustomHashMap<K, V> implements CustomMap<K, V> {   //реал ме�
     private final float loadFactor;
 
 
-    @SuppressWarnings("unchecked") // Подавление предупреждения о неявном приведении типа
+    @SuppressWarnings("unchecked")
     private CustomHashMap(int capacity, float loadFactor) {
 
         this.buckets = (Node<K, V>[]) new Node[capacity];
@@ -83,18 +83,18 @@ public class CustomHashMap<K, V> implements CustomMap<K, V> {   //реал ме�
 
         while (current != null) {
 
-            if (keyMatch(current.key, key)) { // нашли ключ
+            if (keyMatch(current.key, key)) { 
                 V removedValue = current.value;
                 if (prev == null) {  // удал если 1
                     buckets[index] = current.next;
                 } else {
-                    prev.next = current.next; //если нет
+                    prev.next = current.next;
                 }
                 size--;
                 return removedValue;
             }
             prev = current;
-            current = current.next; // переход к сл ноде
+            current = current.next;
         }
         return null;
     }

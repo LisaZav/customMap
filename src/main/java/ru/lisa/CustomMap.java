@@ -1,7 +1,7 @@
 package ru.lisa;
 
-public interface CustomMap <K, V> {// сигнатура мет
-    V get(Object key);
-    V put(Object key, Object value);
-    V remove(Object key);
+public interface CustomMap <K, V> {
+    V get(K key);
+    V put(K key, V value);
+    V remove(K key);
 }
